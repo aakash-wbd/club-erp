@@ -1,25 +1,24 @@
 "use client";
+
 import CheckBox from "@/components/ui/CheckBox";
 import TextBox from "@/components/ui/TextBox";
-import { Button, Text } from "@fluentui/react-components";
+import { Button, Typography } from "antd";
 
 const Login = () => {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
-      <div className="flex flex-col gap-2 justify-center h-full p-10 w-1/2 mx-auto">
-        <Text as="h2" className="!text-3xl !font-semibold" block>
-          Welcome back
-        </Text>
-        <Text as="p" className="!text-md" block>
-          Enter your email to receive a one-time password
-        </Text>
-        <form className="flex flex-col gap-1">
-          <TextBox label="Email" />
-          <CheckBox label="Remember Me" />
-          <Button appearance="primary">Send 4-digit code</Button>
-        </form>
-      </div>
-    </div>
+    <form className="flex flex-col gap-2">
+      <Typography.Text className="text-3xl font-semibold">
+        Welcome Back
+      </Typography.Text>
+      <Typography.Text className="text-sm">
+        Enter your email to receive a one-time password
+      </Typography.Text>
+      <TextBox label="Email" placeholder="Enter your email" />
+      <CheckBox label="Remember Me" />
+      <Button type="primary" className="mt-2">
+        Send 4-digit code
+      </Button>
+    </form>
   );
 };
 

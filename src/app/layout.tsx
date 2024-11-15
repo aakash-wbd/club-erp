@@ -1,7 +1,8 @@
+import { ConfigProvider } from "antd";
 import { Metadata } from "next";
 import { FC, ReactNode } from "react";
+
 import "./globals.css";
-import { Providers } from "./providers";
 
 export const metadata: Metadata = {
   title: "CLUB ERP",
@@ -16,9 +17,7 @@ const RootLayout: FC<RootLayoutProps> = ({ children }) => {
   return (
     <html lang="en">
       <body className="antialiased" suppressHydrationWarning>
-        <Providers>
-          <div className="min-h-screen">{children}</div>
-        </Providers>
+        <ConfigProvider>{children}</ConfigProvider>
       </body>
     </html>
   );
